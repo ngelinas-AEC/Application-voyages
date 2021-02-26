@@ -1,0 +1,68 @@
+
+
+/*  Extra small devices (portrait phones, less than  376px)*/
+@media (max-width: 375.98px) { 
+  .mat-card{
+      font-size: 20%;
+  }
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 376px) and (max-width: 575.98px) { .mat-card{
+  font-size: 25%;
+} }
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) { .mat-card{
+  font-size: 42%;
+} }
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) { .mat-card{
+  font-size: 55%;
+} }
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) { .mat-card{
+  font-size: 75%;
+} }
+
+/*  Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { .mat-card{
+  font-size: 85%;
+} }
+
+/*  Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1500px) { .mat-card{
+  font-size: 120%;
+} }
+
+/*  Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1700px) { .mat-card{
+  font-size: 135%;
+} }
+
+
+
+.prixRabais{
+  color: green
+}
+
+.prixSansRabais{
+  text-decoration: line-through; 
+  color: red
+}
+
+.prixAvecRabais{
+  
+}
+
+.jours{
+  color: firebrick;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.joursdepart{
+  color: white;
+  font-size: 1em;
+}

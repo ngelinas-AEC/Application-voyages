@@ -1,0 +1,29 @@
+.space{
+    flex: 1 1 auto;
+}
+
+.mat-icon {
+    transform: scale(2);
+    margin-right: 25px;
+    margin-left: 25px;
+}
+
+a:hover{
+    text-decoration: underline;
+    transition-timing-function: ease;
+    transition: 0.4s;
+
+}
+
+.active-link{
+    text-decoration: underline;
+
+}
+
+.logo:hover {
+    background-color: white;
+}
+
+.logo:hover div {
+    background-color: orangered;
+}

@@ -1,0 +1,10 @@
+.containerFormRecherche{
+    padding: 10px; 
+    display: flex; 
+    flex-direction: column;
+}
+.titre{
+    background-color: #3F51B5;
+    color: white;
+    text-align: center;
+}

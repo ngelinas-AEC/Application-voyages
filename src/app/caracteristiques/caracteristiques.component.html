@@ -1,0 +1,8 @@
+<div>
+  <b>Caractéristiques:</b> 
+</div>
+<div style="display: flex ;justify-content: flex-start;flex-wrap: wrap;" [style.flexDirection]='direction'>
+  <div *ngFor="let caracteristique of caracteristiques" style="margin: 5px;">
+    <mat-checkbox class="example-margin" [(ngModel)]="caracteristique.selected" (ngModelChange)="change(caracteristique.name)">{{caracteristique.name}}</mat-checkbox>
+  </div> 
+</div>

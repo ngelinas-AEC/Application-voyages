@@ -1,0 +1,35 @@
+<mat-drawer-container class="example-container" autosize>
+<mat-drawer #drawer class="example-sidenav" mode="side">
+    <app-formulaire-recherche [(recherche)]="recherche"></app-formulaire-recherche>
+</mat-drawer>
+ 
+<div class="example-sidenav-content">
+  
+  <div class="example-sidenav-content">
+    <div class="panel panel-default" [ngStyle]="{'background-image': getUrl()}">
+      <mat-grid-list cols="3">
+        <span *ngFor="let item of mesForfaits">
+          <mat-grid-tile *ngIf="item.vedette">
+            <app-forfait-mini [forfait]="item" style="width: 100%;"></app-forfait-mini>
+          </mat-grid-tile>
+        </span>
+      </mat-grid-list>
+    </div>
+  </div>
+
+  <button type="button" mat-button (click)="drawer.toggle()" mat-raised-button color="primary" style="margin: 10px;">
+    Rechercher forfait
+  </button>
+
+</div>
+
+<mat-grid-list cols="3" rowHeight="2:1">
+  <span *ngFor="let item of mesForfaits | rechercheForfait : recherche">
+    <mat-list-item style="height: auto; padding-bottom: 10px;padding-top: 10px;">
+      <app-forfait-complet  [forfait]="item" style="width: 100%;" ></app-forfait-complet>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </span>
+</mat-grid-list>
+
+</mat-drawer-container>

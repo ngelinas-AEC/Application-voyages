@@ -1,0 +1,59 @@
+<div
+  style="margin: 1.5em; border: 1px solid lightblue; line-height: normal;background-image: linear-gradient( lightblue,white,white);">
+  <div style="display: flex; justify-content: space-between">
+
+    <div style="display: flex; width: 80% ">
+
+      <div style="display: flex; flex-direction: column; margin: 30px">
+        <div style="color: rgb(128, 128, 128); font-size: 1em">{{forfait.destination}}</div>
+        <div style="display: flex; justify-content: flex-start; font-size: 0.7em; color: rgb(128, 128, 128);">
+          de {{forfait.villeDepart}}
+        </div>
+        <div style="color: rgb(30, 144, 225);  font-size: 1.6em; margin-top: 0.6em"><span>{{forfait.hotel.nom}}</span>
+        </div>
+
+        <app-etoiles style="color: white;" [etoiles]="forfait.hotel.nombreEtoiles"></app-etoiles>
+        <div style="color: rgb(128, 128, 128); font-size: 1em; margin-top: 1em">Nombre de chambre: {{forfait.hotel.nombreChambres}}</div>
+        <div style="color: rgb(128, 128, 128); font-size: 1.1em; margin-top: 1em">
+          <div *ngFor="let item of forfait.hotel.caracteristiques">
+            <span>{{item}}</span>
+          </div>
+        </div>
+
+        <div style="color: rgb(128, 128, 128); font-size:0.8em; margin-top: 2em"><img src=".\assets\iconadresse.png"
+            alt="" width="25px" height="30px">{{forfait.hotel.coordonnees}}
+        </div>
+      </div>
+
+    </div>
+
+    <div style="display: flex; flex-direction: column; align-items: flex-end;">
+      <span *ngIf="forfait.vedette">
+        <img src=".\assets\iconvedette2.png" alt="" width="90px" height="150px">
+      </span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; align-items: flex-end; margin: 10px;">
+      <div style="display: flex; flex-direction: column;margin: 0.8em;align-items: flex-end">
+        <span class='jours' >{{duree(forfait.dateDepart,forfait.dateRetour)}} jours</span>
+        <div>Du <u>{{forfait.dateDepart | date:'dd-MM-yyyy' }}</u> au <u>{{forfait.dateRetour | date:'dd-MM-yyyy' }}</u></div>
+    </div>
+      <div *ngIf="forfait.rabais>0; else elseBlock" style="margin-top: 1em; text-align: right">
+        <p style="text-decoration: line-through; font-size: 2em; color: rgb(153, 0, 0);">{{forfait.prix}}$</p>
+        <p style="color: green; margin-top: 0.5em; font-size: 2em; margin-bottom: 0.5em"> {{forfait.rabais}}$</p>
+        <p style="font-size: 2em;">{{forfait.prix-forfait.rabais}}$</p>
+      </div>
+
+      <ng-template #elseBlock>
+        <p style="margin-top: 1em; font-size: 3em;">{{forfait.prix}}$</p>
+      </ng-template>
+
+      <div style="margin-top: 0.7em; ">tx et frais incl. par adulte</div>
+      
+      <div style="display: flex; flex-direction: column; align-items: flex-end; margin-top: 10em; margin-right: 10em">
+        <button mat-raised-button color="primary">Choisir une chambre</button>
+      </div>
+      
+    </div>
+  </div>
+</div>

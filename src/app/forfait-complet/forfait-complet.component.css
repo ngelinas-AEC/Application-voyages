@@ -1,0 +1,26 @@
+.forfaitComplet{
+    line-height: normal;
+    border: 2px solid gray; 
+    line-height: normal;
+    background-image: linear-gradient( #00bcd4,lightblue,#D2AA6D); 
+    border-radius: 25px;
+    margin: 5px;
+}
+
+
+
+.forfaitCompletVedette {
+    line-height: normal;
+    border: 2px solid #14a5ff;
+    background-image: linear-gradient( #00bcd4,lightblue,#D2AA6D); 
+    border-radius: 25px;
+    box-shadow: 0 0 15px #22cef9, 0 0 10px #22cef9, 0 0 4px #22cef9, 0 0 2px #22cef9;
+    z-index: -9990;
+    margin: 5px;
+  }
+
+  .jours{
+    color: firebrick;
+    font-weight: bold;
+    font-size: 2em;
+}

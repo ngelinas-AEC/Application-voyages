@@ -1,0 +1,40 @@
+<div class="containerFormRecherche">
+  <h2>Paramètres de Recherche</h2>
+  
+  <mat-form-field appearance="fill">
+    <mat-label>Date de départ</mat-label>
+    <input matInput [matDatepicker]="pickerDepart" [(ngModel)]="recherche.dateDepart" (ngModelChange)="changeDateDepart($event)">
+    <mat-datepicker-toggle matSuffix [for]="pickerDepart"></mat-datepicker-toggle>
+    <mat-datepicker #pickerDepart></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Durée</mat-label>
+    <mat-select [(ngModel)]="recherche.duree" (ngModelChange)="changeDuree($event)">
+      <mat-option *ngFor="let duree of durees" [value]="duree.valeur" >
+        {{duree.valeurAffichee}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <br>
+      <div style='display: flex; align-items: center; '>
+        <mat-label>Nombre d'étoiles: </mat-label>
+        <mat-slider
+            required
+            [(ngModel)]="recherche.nbEtoiles" 
+            (ngModelChange)="changeNbEtoiles($event)"
+            thumbLabel
+            [displayWith]="formatLabel"  
+            tickInterval="1"
+            min="0"
+            max="5">
+          </mat-slider> 
+
+  </div>
+
+  <div style="display: flex;justify-content: space-between;">
+    <button style="flex: 1; margin-right: 2px;" mat-raised-button color="primary"  (click)="resetRecherche()" >Initialiser Paramètres</button>
+  </div>
+</div>
+    

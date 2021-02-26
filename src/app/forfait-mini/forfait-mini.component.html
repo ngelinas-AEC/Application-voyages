@@ -1,0 +1,40 @@
+<mat-card
+  style="background-color: rgba(0, 0, 0, 0.2); display: flex; flex-direction: column; line-height: normal ;  padding:1em; margin-left: 1em; margin-right: 1em; margin-top: 4em; margin-bottom: 4em;">
+  <div style='display: flex; flex-direction: row; justify-content: space-between; flex:1'>
+    <div style='display: flex; flex-direction: row; flex-direction: column;'>
+      <div style="font-size: 1.2em; color: white;">
+        {{forfait.destination}}
+      </div>
+      <div style="display: flex; justify-content: flex-end; font-size: 0.7em; color: white;">
+        de {{forfait.villeDepart}}
+      </div>
+    </div>
+    <span *ngIf="forfait.vedette">
+      <img src=".\assets\iconvedette2.png" width="45px" height="75px">
+    </span>
+  </div>
+  <div
+    style='display: flex; flex-direction: row; justify-content: center;flex:1;font-size: 2em;color: white;margin-bottom: 0.8em; margin-top: 0.8em;'>
+    {{forfait.hotel.nom}}
+  </div>
+  <div style='margin-bottom: 1.5em;'>
+    <div *ngIf="forfait.rabais>0; else elseBlock" class='minicardPrix'
+      style="display:flex; flex:1; font-size:1.6em; justify-content: space-evenly; ">
+      <span style="color: rgb(255, 0, 0);" class='prixSansRabais'>{{forfait.prix}}$</span>
+      <span style="color: greenyellow;" class='prixRabais'>{{forfait.rabais}}$</span>
+      <span style="color: white;" class='prixAvecRabais'>{{forfait.prix-forfait.rabais}}$</span>
+    </div>
+    <ng-template #elseBlock><span
+        style="display: flex;flex:1;font-size:1.6em;justify-content: space-evenly;">{{forfait.prix}}$</span>
+    </ng-template>
+  </div>
+  <div
+    style='display: flex; flex-direction: row; font-size: 1.2em;justify-content: space-between;flex:1; align-items:flex-end;'>
+    <div>
+      <app-etoiles [etoiles]="forfait.hotel.nombreEtoiles" style="font-size: 2em; "></app-etoiles>
+    </div>
+    <div><span style="color: white;"> {{forfait.dateDepart | date:'dd-MM-yyyy' }}</span> <span style="color: rgb(255, 0, 0);"> {{duree(forfait.dateDepart,forfait.dateRetour)}} jours</span>  
+    </div>
+   
+  </div>
+</mat-card>
